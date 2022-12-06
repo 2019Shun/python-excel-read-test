@@ -62,6 +62,14 @@ def read_test_pylightxl():
             tmp_list.append(v)
 
 @print_proc_time
+def read_test_pandas():
+    df = pd.read_excel(test_file_name, header=None, index_col=None)
+    itr = np.nditer(df.values)
+    tmp_list = []
+    for v in itr:
+        tmp_list.append(v)
+
+@print_proc_time
 def read_test_xml():
     with zipfile.ZipFile(test_file_name, 'r') as zip_data:
         file_data = zip_data.read('xl/worksheets/sheet1.xml')
@@ -71,17 +79,9 @@ def read_test_xml():
     for v in root.findall('./{*}sheetData/{*}row/{*}c/{*}v'):
         tmp_list.append(v.text)
 
-@print_proc_time
-def read_test_pandas():
-    df = pd.read_excel(test_file_name, header=None, index_col=None)
-    itr = np.nditer(df.values)
-    tmp_list = []
-    for v in itr:
-        tmp_list.append(v)
-
 if __name__ == '__main__':
     read_test_openpyxl()
     read_test_xlwings()
     read_test_pylightxl()
-    read_test_xml()
     read_test_pandas()
+    read_test_xml()
