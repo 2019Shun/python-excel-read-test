@@ -80,8 +80,8 @@ def read_test_pandas():
         tmp_list.append(v)
 
 if __name__ == '__main__':
-    # read_test_openpyxl()
-    # read_test_xlwings()
+    read_test_openpyxl()
+    read_test_xlwings()
     read_test_pylightxl()
-    # read_test_xml()
-    # read_test_pandas()
+    read_test_xml()
+    read_test_pandas()

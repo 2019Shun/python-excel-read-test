@@ -4,10 +4,12 @@ import openpyxl
 import random
 random.seed(0)
 
-save_file_name = 'test_file_1.xlsx'
-# save_file_name = 'test_file_2.xlsx'
-iter_num = 100
-# iter_num = 1000
+save_file_name = 'test_file_1.xlsx'     # 軽量ファイル用
+iter_num = 100                          # 軽量ファイル用
+
+# save_file_name = 'test_file_2.xlsx'   # 重量ファイル用
+# iter_num = 1000                       # 重量ファイル用
+
 sheet_name = 'test_sheet'
 
 wb = openpyxl.Workbook()
